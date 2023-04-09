@@ -29,12 +29,14 @@ public class FurnitureController {
         return furnitureService.queryAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/queryById", method = RequestMethod.GET)
     @ResponseBody
     public Furniture queryById(String id, String username) {
         return furnitureService.queryById(id, username);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/queryByName", method = RequestMethod.GET)
     @ResponseBody
     public List<Furniture> queryByName(String name) {
