@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/user")
 public class UserController {
 
@@ -30,7 +31,6 @@ public class UserController {
         return userService.queryByName(user.getName());
     }
 
-    @CrossOrigin(origins = "https://my-react-app-static.onrender.com/")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public boolean login(@RequestBody User user) {

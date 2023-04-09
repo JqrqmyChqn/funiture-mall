@@ -16,27 +16,25 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/furniture")
 public class FurnitureController {
 
     @Autowired
     private FurnitureService furnitureService;
 
-    @CrossOrigin(origins = "https://my-react-app-static.onrender.com/")
     @RequestMapping(value = "/queryAll", method = RequestMethod.GET)
     @ResponseBody
     public List<Furniture> queryAll() {
         return furnitureService.queryAll();
     }
 
-    @CrossOrigin(origins = "https://my-react-app-static.onrender.com/")
     @RequestMapping(value = "/queryById", method = RequestMethod.GET)
     @ResponseBody
     public Furniture queryById(String id, String username) {
         return furnitureService.queryById(id, username);
     }
 
-    @CrossOrigin(origins = "https://my-react-app-static.onrender.com/")
     @RequestMapping(value = "/queryByName", method = RequestMethod.GET)
     @ResponseBody
     public List<Furniture> queryByName(String name) {
