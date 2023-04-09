@@ -22,6 +22,7 @@ public class FurnitureController {
     @Autowired
     private FurnitureService furnitureService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/queryAll", method = RequestMethod.GET)
     @ResponseBody
     public List<Furniture> queryAll() {
