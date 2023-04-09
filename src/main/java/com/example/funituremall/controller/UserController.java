@@ -29,8 +29,7 @@ public class UserController {
     public User queryByName(@RequestBody User user) {
         return userService.queryByName(user.getName());
     }
-
-    @CrossOrigin(origins = "http://localhost:3000")
+    
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public boolean login(@RequestBody User user) {
