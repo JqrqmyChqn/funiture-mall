@@ -30,7 +30,7 @@ public class UserController {
         return userService.queryByName(user.getName());
     }
 
-    @CrossOrigin(origins = "https://my-react-app-0cn2.onrender.com")
+    @CrossOrigin(origins = "https://my-react-app-static.onrender.com/")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public boolean login(@RequestBody User user) {
