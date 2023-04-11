@@ -29,7 +29,7 @@ public class UserController {
     public User queryByName(@RequestBody User user) {
         return userService.queryByName(user.getName());
     }
-    
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public boolean login(@RequestBody User user) {
